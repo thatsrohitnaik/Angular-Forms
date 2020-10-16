@@ -10,8 +10,7 @@ export class ModelDrivenComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   userDetails = this.formBuilder.group({
     firstName: ['', Validators.required],
@@ -26,11 +25,9 @@ export class ModelDrivenComponent implements OnInit {
       this.formBuilder.control('')
     ])
   });
-
   get languagesKnown() {
     return this.userDetails.get('languagesKnown') as FormArray;
   }
-
   updateValues() {
     this.userDetails.patchValue({
       firstName: 'Rohit',
@@ -39,12 +36,10 @@ export class ModelDrivenComponent implements OnInit {
       }
     })
   }
-
-  addLang(){
+  addLang() {
     this.languagesKnown.push(this.formBuilder.control(''));
   }
-
-  onSubmit(){
+  onSubmit() {
     console.log(this.userDetails.value);
   }
 }

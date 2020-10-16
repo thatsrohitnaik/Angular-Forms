@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../model/user';
 
 @Component({
   selector: 'app-template-driven',
@@ -12,4 +13,6 @@ export class TemplateDrivenComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  model = new User("rohit",18,"male");
+  
 }
